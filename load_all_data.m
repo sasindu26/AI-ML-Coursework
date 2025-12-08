@@ -1,5 +1,5 @@
 function allSessions = load_all_data(dataFolder, defaultFs)
-
+%
 allSessions = [];
 k = 0;
 
@@ -37,5 +37,4 @@ for userID = 1:10
         allSessions(k).day    = day;
     end
 end
-
 end

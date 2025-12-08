@@ -6,7 +6,7 @@ This repository contains the implementation and results for an acceleration-base
 
 ## 📄 Final Report
 The complete detailed analysis is available in the project report:
-👉 **[Extended Version of AI & ML Report.pdf](Extended_Version_of_AI_&_ML_Report.pdf)**
+👉 **[Extended Version of AI & ML Report.pdf](Extended_Version_of_AI_&_ML_Report_group-122.pdf)**
 
 ---
 

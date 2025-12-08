@@ -1,0 +1,30 @@
+function [allWindows, labelsUser, labelsDay] = ...
+    build_windows(allSessions, fs, winLenSec, overlap)
+%
+winLenSamples = round(winLenSec * fs);
+stepSamples   = round(winLenSamples * (1 - overlap));
+
+allWindows = [];
+labelsUser = [];
+labelsDay  = [];
+
+for k = 1:numel(allSessions)
+    sig   = allSessions(k).signal;
+    user  = allSessions(k).userID;
+    day   = allSessions(k).day;
+    
+    N = size(sig,1);
+    startIdx = 1;
+    
+    while (startIdx + winLenSamples - 1) <= N
+        idxRange = startIdx : (startIdx + winLenSamples - 1);
+        winSeg   = sig(idxRange, :);
+        
+        allWindows = [allWindows; winSeg(:)'];  %#ok<AGROW>
+        labelsUser = [labelsUser; user];       %#ok<AGROW>
+        labelsDay  = [labelsDay; day];         %#ok<AGROW>
+        
+        startIdx = startIdx + stepSamples;
+    end
+end
+end
